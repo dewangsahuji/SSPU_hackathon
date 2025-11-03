@@ -115,19 +115,16 @@ def dashboard():
 # 🔹 Fitobot Chatbot Routes
 # ------------------------------
 
-@app.route('/chatbot')
+# ✅ Chatbot routes
+@app.route('/chatbot', methods=['GET'])
 def chatbot():
-    """Chatbot UI Page"""
     return render_template('chat.html')
 
 @app.route('/chat', methods=['POST'])
 def chat():
-    """Handles chatbot interaction"""
     user_input = request.json.get('message', '')
     reply = get_fitobot_response(user_input)
     return jsonify({"response": reply})
-
-
 
 
 
