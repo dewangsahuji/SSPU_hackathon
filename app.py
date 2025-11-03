@@ -78,6 +78,12 @@ def dashboard():
     try:
         # Read exercise log
         df = pd.read_csv('exercise_log.csv')
+        dashboardData = {
+        "weekProgress": {"completed": 3, "total": 5, "percentage": 60},
+        "target": {"current": 80, "goal": 100, "unit": "workouts"},
+        "recentWorkouts": 12,
+        "diet": {"calories": 2200, "protein": 120, "carbs": 180, "fats": 50}
+    }
 
         # If no data yet
         if df.empty:
@@ -104,7 +110,7 @@ def dashboard():
         plt.close(fig)
 
         # Render dashboard with chart
-        return render_template('dashboard.html', chart=encoded, message=None)
+        return render_template('dashboard.html',dashboardData=dashboardData, chart=encoded, message=None)
 
     except FileNotFoundError:
         return render_template('dashboard.html', chart=None, message="No data file found! Please do an exercise first.")

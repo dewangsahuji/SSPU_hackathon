@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="min-h-screen bg-gradient-to-br from-green-50 to-red-50 p-4 md:p-8">
+
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-green-700 mb-6 text-2xl font-semibold">Dashboard</h1>
+
+    <!-- TOP CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+
+      <!-- Week Progress -->
+      <div class="border-2 border-green-200 rounded-lg p-4 bg-white">
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="text-sm text-green-700">Week Progress</h2>
+          <i class="text-green-600">📈</i>
+        </div>
+        <div class="text-2xl mb-2">3 / 5</div>
+        <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+          <div class="bg-green-600 h-2 rounded-full" style="width:60%"></div>
+        </div>
+        <p class="text-sm text-gray-600">60% complete</p>
+      </div>
+
+      <!-- Target -->
+      <div class="border-2 border-green-200 rounded-lg p-4 bg-white">
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="text-sm text-green-700">Target</h2>
+          <i class="text-green-600">🎯</i>
+        </div>
+        <div class="text-2xl mb-2">80 / 100</div>
+        <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+          <div class="bg-green-600 h-2 rounded-full" style="width:80%"></div>
+        </div>
+        <p class="text-sm text-gray-600">workouts this month</p>
+      </div>
+
+      <!-- History -->
+      <div class="border-2 border-green-200 rounded-lg p-4 bg-white hover:shadow-lg transition-all block">
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="text-sm text-green-700">History</h2>
+          <i class="text-green-600">📜</i>
+        </div>
+        <div class="text-2xl mb-2">12</div>
+        <p class="text-sm text-gray-600">Recent workouts</p>
+        <span class="text-green-600 text-sm mt-2 inline-block">View all →</span>
+      </div>
+
+      <!-- Diet -->
+      <div class="border-2 border-green-200 rounded-lg p-4 bg-white">
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="text-sm text-green-700">Diet</h2>
+          <i class="text-green-600">🥗</i>
+        </div>
+        <div class="text-2xl mb-2">2200</div>
+        <p class="text-sm text-gray-600">kcal today</p>
+        <div class="flex gap-2 mt-2">
+          <span class="border border-green-300 rounded px-2 py-1 text-xs">P: 120g</span>
+          <span class="border border-green-300 rounded px-2 py-1 text-xs">C: 180g</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI COACH & NUTRITION -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      
+      <!-- AI Fitness Coach -->
+      <div class="border-2 border-green-200 rounded-lg p-4 bg-white hover:shadow-lg transition-all block">
+        <h2 class="text-green-700 flex items-center gap-2 mb-2">💬 AI Fitness Coach</h2>
+        <p class="text-sm text-gray-600 mb-3">Get personalized fitness advice</p>
+        <div class="h-48 flex items-center justify-center bg-gradient-to-br from-green-50 to-red-50 rounded-lg border-2 border-green-200">
+          <div class="text-center">
+            <p class="text-sm text-gray-600 mb-2">Chat with your AI coach</p>
+            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"><a href="http://localhost:8501">Open Chat →</a></button>
+          </div>
+        </div>
+        <ul class="mt-4 text-sm text-gray-600 space-y-1">
+          <li>• Workout recommendations</li>
+          <li>• Nutrition advice</li>
+          <li>• Form corrections</li>
+        </ul>
+      </div>
+
+      <!-- Nutrition Breakdown -->
+      <div class="border-2 border-green-200 rounded-lg p-4 bg-white">
+        <h2 class="text-green-700 mb-3">Nutrition Breakdown</h2>
+
+        <div class="mb-3">
+          <div class="flex justify-between text-sm mb-1">
+            <span>Protein</span><span>120g / 150g</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-green-600 h-2 rounded-full" style="width:80%"></div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="flex justify-between text-sm mb-1">
+            <span>Carbohydrates</span><span>180g / 250g</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-green-600 h-2 rounded-full" style="width:72%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between text-sm mb-1">
+            <span>Fats</span><span>50g / 70g</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-green-600 h-2 rounded-full" style="width:71%"></div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-green-200 mt-4">
+          <h4 class="text-sm mb-3 font-semibold">Quick Tips</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>• Stay hydrated — drink 8 glasses of water daily</li>
+            <li>• Eat protein within 30 minutes post-workout</li>
+            <li>• Include vegetables in every meal</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
