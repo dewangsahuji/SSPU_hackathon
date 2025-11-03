@@ -1,5 +1,5 @@
 fitoproto_web/
-│
+├── fitobot.py
 ├── app.py                      ← main Flask entry point
 │
 ├── core/

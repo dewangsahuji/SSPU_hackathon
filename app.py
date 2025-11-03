@@ -9,7 +9,7 @@ from flask import request, jsonify
 #-------------------------------
 # Import your exercise trackers
 #-------------------------------
-
+from fitobot import get_fitobot_response
 from exercises.bicep.bicep_tracker import process_frame as bicep_frame
 from exercises.squat.squat_tracker import process_frame as squat_frame
 from exercises.pushup.pushup_tracker import process_frame as pushup_frame
