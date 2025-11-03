@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fitobot Chat</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #121212; color: white; text-align: center; }
+    #chatbox { width: 400px; margin: 40px auto; padding: 20px; background: #1f1f1f; border-radius: 12px; }
+    #messages { height: 320px; overflow-y: auto; border: 1px solid #333; padding: 10px; border-radius: 10px; text-align: left; }
+    .user { color: #00bfff; margin: 5px 0; }
+    .bot { color: #90ee90; margin: 5px 0; }
+    input { width: 75%; padding: 10px; margin-top: 10px; border: none; border-radius: 6px; }
+    button { padding: 10px 15px; border: none; border-radius: 6px; background: #00bfff; color: white; cursor: pointer; }
+    button:hover { background: #0099cc; }
+  </style>
+</head>
+<body>
+  <h1>💬 Fitobot — Your Workout Buddy</h1>
+  <div id="chatbox">
+    <div id="messages"></div>
+    <input id="userInput" placeholder="Ask me anything about fitness...">
+    <button type="button" onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const msg = input.value.trim();
+      if (!msg) return;
+      const messages = document.getElementById("messages");
+
+      messages.innerHTML += `<div class='user'><b>You:</b> ${msg}</div>`;
+      input.value = "";
+
+      const res = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: msg })
+      });
+
+      const data = await res.json();
+      messages.innerHTML += `<div class='bot'><b>Fitobot:</b> ${data.response}</div>`;
+      messages.scrollTop = messages.scrollHeight;
+    }
+  </script>
+</body>
+</html>

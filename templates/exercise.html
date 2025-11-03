@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ exercise | capitalize }} Tracker</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: #00ffcc;
+      margin-top: 30px;
+    }
+    img {
+      margin-top: 20px;
+      border-radius: 10px;
+      border: 3px solid #00ffcc;
+    }
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #009977;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>{{ exercise | capitalize }} Tracker</h1>
+  <p>Press <b>Q</b> to quit the webcam feed.</p>
+
+  <img src="{{ url_for('video_feed', exercise=exercise) }}" width="800" />
+
+  <br />
+  <a class="btn" href="/">← Back to Exercises</a>
+</body>
+</html>
