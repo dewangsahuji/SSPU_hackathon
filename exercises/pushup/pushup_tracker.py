@@ -115,3 +115,4 @@ def process_frame(frame):
         print(f"Error: {e}")
 
     return img_bgr, count
+
